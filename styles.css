@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1; 
+    margin: 2px; 
+    background-color: whitesmoke;
+
+}
+
+
+
+#header { border-radius: 25px;
+    background-image: url('./Images/celestial-church-of-christ-logo-7E59BAA844-seeklogo.com.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 222px; 
+    text-align: center;
+    padding: 20px;
+    color: black;
+    position: relative; 
+}
+
+.header-image {
+    height: 100%;
+    background: contain no-repeat top; 
+}
+
+ul { 
+    list-style: none;
+
+}
+
+nav { margin: 40px;
+    padding: 30px; 
+    background-color: aquamarine;
+    border-radius: 20px;
+}
+
+nav a { margin: 0 5px; 
+    text-decoration: none;
+    color: #007BFF;
+
+ }
+
+nav a:hover { text-transform: uppercase;
+} 
+
+.containermy-5 {
+    background-image: url(./Images/IMG_7795.jpg);
+}
+
