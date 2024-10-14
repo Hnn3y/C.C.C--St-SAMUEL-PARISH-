@@ -49,9 +49,7 @@ body {
 
 
 
-.container, .container-sm {
-    max-width: 540px;
-}  
+
 
 .carousel {
     position: relative;
