@@ -62,4 +62,9 @@ video {
     min-width: 85%; 
     transform: translate(-50%, -50%); 
     border-radius: 20px;
+} 
+
+.rounded-image{
+    border-radius: 20px;
+    overflow: hidden;
 }
