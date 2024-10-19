@@ -1,6 +1,6 @@
 .b-example-divider {
     width: 100%;
-    height: 2px;
+    height: 5px;
     border-width: 1px;
 } 
 
@@ -65,6 +65,10 @@ video {
 } 
 
 .rounded-image{
-    border-radius: 20px;
+    border-radius: 28px;
     overflow: hidden;
+} 
+
+.rounded-image-carousel{
+    border-radius: 15px;
 }
