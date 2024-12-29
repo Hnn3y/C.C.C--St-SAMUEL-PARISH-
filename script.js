@@ -26,4 +26,4 @@ var x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
     document.getElementById("new-year-message").style.display = "block";
   }
-}, 1000);
+}, 1000); 

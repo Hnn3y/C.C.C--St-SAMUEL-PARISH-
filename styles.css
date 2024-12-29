@@ -1,28 +1,36 @@
-.b-example-divider {
-    width: 100%;
-    height: 5px;
-    border-width: 1px;
-}
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-.carousel { 
+    background-color: #0a0e13;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    flex-direction: column; /* Ensure vertical alignment of children */
+  }
+  
+  .b-example-divider {
+    width: 100%;
+    height: 5px;
+    border-width: 1px;
+  }
+  
+  .carousel {
     border-radius: 50px;
     margin-bottom: 4rem;
     position: relative;
-}
-
-.carousel-inner {
+  }
+  
+  .carousel-inner {
     border-radius: 50px;
     position: relative;
     width: 100%;
     overflow: hidden;
-}
-
-.carousel-indicators {
+  }
+  
+  .carousel-indicators {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -34,81 +42,153 @@ body {
     margin-right: 15%;
     margin-bottom: 1rem;
     margin-left: 15%;
-} 
-
-.carousel-item { 
+  }
+  
+  .carousel-item {
     height: 380px;
     position: relative;
     display: none;
-    width: 100%; /* Changed to ensure full width */
+    width: 100%;
     backface-visibility: hidden;
-    transition: transform .6s ease-in-out;
-} 
-
-.video-container {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .carousel-item.active {
+    display: block;
+  }
+  
+  .video-container {
     position: relative;
-    height: 80vh; 
-    overflow: hidden; 
-}
-
-video {
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  video {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%; /* Adjusted for full width */
-    transform: translate(-50%, -50%); 
+    width: 100%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
-} 
-
-.rounded-image {
-    border-radius: 28px;
-    overflow: hidden;
-} 
-
-.rounded-image-carousel {
+  }
+  
+  .rounded-image-carousel {
     border-radius: 15px;
-}
-
-/* New Year Message Section */
-#new-year-message {
+  }
+  
+  #new-year-message {
     background-color: #f8f9fa;
     padding: 2rem 1rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-}
-
-#countdown {
+  }
+  
+  #countdown {
     font-size: 2rem;
     font-weight: bold;
     color: #dc3545;
-} 
-
-.countdown-timer {
+  }
+  
+  .countdown-timer {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ff6f61; /* Change to match your theme */
+    color: #ff6f61;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
+  }
+  
+  @keyframes glow {
     from {
-        box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+      box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
     }
     to {
-        box-shadow: 0 0 20px #ff9d8f, 0 0 30px #ff9d8f;
+      box-shadow: 0 0 20px #ff9d8f, 0 0 30px #ff9d8f;
     }
-}
-
-.festive-title {
-    font-family: 'Lobster', cursive;
+  }
+  
+  .festive-title {
+    font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
-    color: #d4af37; /* Gold color for the festive title */
+    color: #d4af37;
+    margin-bottom: 2rem; /* Add margin to separate from tree */
+  }
+  
+  .tree {
+    position: relative;
+    height: 50vmin;
+    width: 25vmin;
+    transform-style: preserve-3d;
+    animation: spin 2s infinite linear;
+    margin: 0 auto; /* Center the tree */
+  }
+  
+  .tree__light {
+    transform-style: preserve-3d;
+    position: absolute;
+    height: 1vmin;
+    width: 1vmin;
+    border-radius: 50%;
+    animation: flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4), appear 0.5s calc(var(--appear) * 0.05s) both;
+    left: 50%;
+    transform: translate(-50%, 50%) rotateY(calc(var(--rotate, 0) * 1deg)) translate3d(0, 0, calc(var(--radius, 0) * 1vmin));
+    bottom: calc(var(--y, 0) * 1%);
+  }
+  
+  .tree__star {
+    stroke-width: 5vmin;
+    stroke: #f5e0a3;
+    filter: drop-shadow(0 0 2vmin #fcf1cf);
+    height: 5vmin;
+    width: 5vmin;
+    overflow: visible !important;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    stroke-dasharray: 1000 1000;
+    fill: none;
+    animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+  }
+  
+  @keyframes stroke {
+    from {
+      stroke-dashoffset: -1000;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes flash {
+    0%, 100% {
+      background: #f00;
+    }
+    20% {
+      background: #fff;
+    }
+    40% {
+      background: #f00;
+    }
+    60% {
+      background: #fff;
+    }
+    80% {
+      background: #f00;
+    }
   }
