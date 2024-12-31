@@ -11,7 +11,10 @@ body {
   justify-content: center;
   perspective: 1200px;
   transform-style: preserve-3d;
+  background: linear-gradient(to right, #B1F0F7, #f4f4f4);
 }
+
+
 
 .b-example-divider {
   width: 100%;
